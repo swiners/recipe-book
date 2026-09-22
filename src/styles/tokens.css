@@ -1,0 +1,78 @@
+/* Two tiers, same shape as Stardust: tier 1 is raw values with no opinion about use,
+   tier 2 names a role. Components only ever reference tier 2, so a palette change is
+   one edit here rather than a find-and-replace through the components. */
+:root {
+  /* ── tier 1 · primitives ───────────────────────────────────────────────── */
+  --rb-clay-50:  #fbf7f4;
+  --rb-clay-100: #f4ece5;
+  --rb-clay-200: #e7d9cc;
+  --rb-clay-400: #b99a7e;
+  --rb-clay-700: #6d5240;
+  --rb-clay-900: #2e2019;
+
+  --rb-leaf-100: #e3ede0;
+  --rb-leaf-500: #5c8a52;
+  --rb-leaf-700: #3f6337;
+
+  --rb-ember-100: #fbe6dd;
+  --rb-ember-500: #c4603a;
+
+  --rb-ink-900: #1c1714;
+  --rb-ink-700: #4a3f38;
+  --rb-ink-500: #7b6d63;
+  --rb-white:   #ffffff;
+
+  --rb-space-1: 4px;  --rb-space-2: 8px;  --rb-space-3: 12px;
+  --rb-space-4: 16px; --rb-space-5: 24px; --rb-space-6: 32px; --rb-space-7: 48px;
+
+  --rb-radius-s: 6px; --rb-radius-m: 10px; --rb-radius-l: 16px;
+
+  --rb-font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --rb-font-display: ui-serif, Georgia, "Times New Roman", serif;
+
+  /* ── tier 2 · semantic ─────────────────────────────────────────────────── */
+  --rb-surface-page:    var(--rb-clay-50);
+  --rb-surface-raised:  var(--rb-white);
+  --rb-surface-sunken:  var(--rb-clay-100);
+  --rb-border:          var(--rb-clay-200);
+  --rb-border-strong:   var(--rb-clay-400);
+
+  --rb-text-primary:    var(--rb-ink-900);
+  --rb-text-secondary:  var(--rb-ink-700);
+  --rb-text-muted:      var(--rb-ink-500);
+  --rb-text-on-accent:  var(--rb-white);
+
+  --rb-accent:          var(--rb-leaf-700);
+  --rb-accent-hover:    var(--rb-leaf-500);
+  --rb-accent-subtle:   var(--rb-leaf-100);
+
+  --rb-danger:          var(--rb-ember-500);
+  --rb-danger-subtle:   var(--rb-ember-100);
+
+  --rb-focus-ring:      var(--rb-leaf-500);
+  --rb-shadow-card:     0 1px 2px rgba(46, 32, 25, 0.06), 0 4px 12px rgba(46, 32, 25, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rb-surface-page:   #17120f;
+    --rb-surface-raised: #211a16;
+    --rb-surface-sunken: #2b221c;
+    --rb-border:         #3a2e26;
+    --rb-border-strong:  #57463a;
+
+    --rb-text-primary:   #f4ece5;
+    --rb-text-secondary: #d3c3b6;
+    --rb-text-muted:     #a08f81;
+
+    --rb-accent:         #8fb884;
+    --rb-accent-hover:   #a9cc9f;
+    --rb-accent-subtle:  #2a3a26;
+    --rb-text-on-accent: #17120f;
+
+    --rb-danger:         #e08863;
+    --rb-danger-subtle:  #3b241b;
+
+    --rb-shadow-card:    0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+}

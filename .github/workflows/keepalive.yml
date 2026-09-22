@@ -1,0 +1,38 @@
+name: Keep Supabase awake
+
+# Supabase pauses free projects after 7 days of low activity, and a paused project
+# means the recipe book is simply down until it is restored by hand. Three pings a
+# week is comfortably inside the window without being wasteful. Actions minutes are
+# free and unlimited on public repositories.
+on:
+  schedule:
+    - cron: "17 6 * * 1,3,5" # Mon/Wed/Fri, 06:17 UTC — off the hour to avoid the rush
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping REST endpoint
+        env:
+          URL: ${{ vars.VITE_SUPABASE_URL }}
+          KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$KEY" ]; then
+            echo "Supabase variables not set yet — nothing to ping."
+            exit 0
+          fi
+          # HEAD against the table. RLS means an unauthenticated caller reads nothing,
+          # which is the point: this proves the project is awake without needing, or
+          # being able to reach, any actual data.
+          code=$(curl -s -o /dev/null -w '%{http_code}' -I \
+            "$URL/rest/v1/recipes?select=id&limit=1" -H "apikey: $KEY")
+          echo "HTTP $code"
+          # 2xx or 4xx both mean the project answered. Only 5xx/000 mean trouble.
+          case "$code" in
+            2*|4*) echo "Project is awake." ;;
+            *) echo "Unexpected response — check the project."; exit 1 ;;
+          esac

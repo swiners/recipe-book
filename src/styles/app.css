@@ -1,0 +1,124 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--rb-surface-page);
+  color: var(--rb-text-primary);
+  font-family: var(--rb-font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus everywhere. Removing the outline without replacing it is the single
+   most common way a keyboard user loses their place. */
+:focus-visible {
+  outline: 2px solid var(--rb-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--rb-radius-s);
+}
+
+.rb-shell { max-width: 900px; margin: 0 auto; padding: var(--rb-space-5) var(--rb-space-4) var(--rb-space-7); }
+
+.rb-header { display: flex; align-items: baseline; gap: var(--rb-space-3); flex-wrap: wrap; margin-bottom: var(--rb-space-5); }
+.rb-title { font-family: var(--rb-font-display); font-size: 30px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+.rb-count { color: var(--rb-text-muted); font-size: 14px; }
+.rb-header-actions { margin-left: auto; display: flex; gap: var(--rb-space-2); }
+
+/* ── controls ──────────────────────────────────────────────────────────── */
+.rb-btn {
+  font: inherit; font-weight: 550; cursor: pointer;
+  padding: var(--rb-space-2) var(--rb-space-4);
+  border-radius: var(--rb-radius-m);
+  border: 1px solid var(--rb-border-strong);
+  background: var(--rb-surface-raised); color: var(--rb-text-primary);
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.rb-btn:hover { background: var(--rb-surface-sunken); }
+.rb-btn--primary { background: var(--rb-accent); border-color: var(--rb-accent); color: var(--rb-text-on-accent); }
+.rb-btn--primary:hover { background: var(--rb-accent-hover); border-color: var(--rb-accent-hover); }
+.rb-btn--quiet { border-color: transparent; background: transparent; color: var(--rb-text-secondary); }
+.rb-btn--quiet:hover { background: var(--rb-surface-sunken); }
+.rb-btn--danger { border-color: transparent; background: transparent; color: var(--rb-danger); }
+.rb-btn--danger:hover { background: var(--rb-danger-subtle); }
+.rb-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.rb-input, .rb-textarea, .rb-select {
+  font: inherit; width: 100%;
+  padding: var(--rb-space-2) var(--rb-space-3);
+  border: 1px solid var(--rb-border); border-radius: var(--rb-radius-m);
+  background: var(--rb-surface-raised); color: var(--rb-text-primary);
+}
+.rb-textarea { resize: vertical; min-height: 72px; }
+
+.rb-field { display: flex; flex-direction: column; gap: var(--rb-space-1); margin-bottom: var(--rb-space-4); }
+/* A pill inside a column-flex field would otherwise stretch to the field width and stop
+   reading as a toggle. Inputs still want the full width, so this targets the pill only. */
+.rb-field > .rb-toggle { align-self: flex-start; }
+.rb-label { font-size: 13px; font-weight: 600; color: var(--rb-text-secondary); }
+.rb-hint { font-size: 12px; color: var(--rb-text-muted); }
+.rb-row { display: flex; gap: var(--rb-space-3); flex-wrap: wrap; }
+.rb-row > * { flex: 1 1 140px; }
+
+/* ── filter bar ────────────────────────────────────────────────────────── */
+.rb-filters { display: flex; gap: var(--rb-space-2); align-items: center; flex-wrap: wrap; margin-bottom: var(--rb-space-5); }
+.rb-search { flex: 1 1 220px; }
+
+.rb-toggle {
+  display: inline-flex; align-items: center; gap: var(--rb-space-2);
+  padding: var(--rb-space-2) var(--rb-space-3);
+  border: 1px solid var(--rb-border); border-radius: 999px;
+  background: var(--rb-surface-raised); cursor: pointer; font-size: 14px; white-space: nowrap;
+}
+.rb-toggle[aria-pressed="true"] { background: var(--rb-accent-subtle); border-color: var(--rb-accent); color: var(--rb-accent); font-weight: 600; }
+
+/* ── cards ─────────────────────────────────────────────────────────────── */
+.rb-grid { display: grid; gap: var(--rb-space-4); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+
+.rb-card {
+  text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: var(--rb-surface-raised);
+  border: 1px solid var(--rb-border); border-radius: var(--rb-radius-l);
+  padding: var(--rb-space-4);
+  box-shadow: var(--rb-shadow-card);
+  display: flex; flex-direction: column; gap: var(--rb-space-2);
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+.rb-card:hover { border-color: var(--rb-border-strong); transform: translateY(-1px); }
+.rb-card-title { font-family: var(--rb-font-display); font-size: 18px; font-weight: 600; margin: 0; }
+.rb-card-meta { font-size: 13px; color: var(--rb-text-muted); }
+
+.rb-pills { display: flex; gap: var(--rb-space-1); flex-wrap: wrap; }
+.rb-pill {
+  font-size: 12px; padding: 2px var(--rb-space-2);
+  border-radius: 999px; background: var(--rb-surface-sunken); color: var(--rb-text-secondary);
+}
+.rb-pill--allium { background: var(--rb-accent-subtle); color: var(--rb-accent); font-weight: 600; }
+
+/* ── detail + form ─────────────────────────────────────────────────────── */
+.rb-panel { background: var(--rb-surface-raised); border: 1px solid var(--rb-border); border-radius: var(--rb-radius-l); padding: var(--rb-space-5); box-shadow: var(--rb-shadow-card); }
+.rb-section-heading { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rb-text-muted); margin: var(--rb-space-5) 0 var(--rb-space-2); }
+.rb-list { margin: 0; padding-left: var(--rb-space-5); display: flex; flex-direction: column; gap: var(--rb-space-2); }
+.rb-line { display: flex; gap: var(--rb-space-2); align-items: flex-start; margin-bottom: var(--rb-space-2); }
+.rb-line > .rb-input:first-child { flex: 0 0 72px; }
+.rb-line > .rb-input:nth-child(2) { flex: 0 0 84px; }
+.rb-line > .rb-input:nth-child(3), .rb-line > .rb-textarea { flex: 1 1 auto; }
+
+.rb-empty { text-align: center; padding: var(--rb-space-7) var(--rb-space-4); color: var(--rb-text-muted); }
+
+.rb-banner { padding: var(--rb-space-3) var(--rb-space-4); border-radius: var(--rb-radius-m); margin-bottom: var(--rb-space-4); font-size: 14px; }
+.rb-banner--error { background: var(--rb-danger-subtle); color: var(--rb-danger); }
+.rb-banner--info  { background: var(--rb-surface-sunken); color: var(--rb-text-secondary); }
+
+/* ── auth ──────────────────────────────────────────────────────────────── */
+.rb-auth { max-width: 380px; margin: 12vh auto; padding: 0 var(--rb-space-4); }
+.rb-auth .rb-title { margin-bottom: var(--rb-space-2); }
+.rb-auth p { color: var(--rb-text-muted); font-size: 14px; margin-top: 0; }
+
+@media (max-width: 520px) {
+  .rb-title { font-size: 24px; }
+  .rb-shell { padding: var(--rb-space-4) var(--rb-space-3) var(--rb-space-6); }
+  .rb-line { flex-wrap: wrap; }
+}

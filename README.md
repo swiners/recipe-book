@@ -46,6 +46,32 @@ directions after any schema change — the checks are at the bottom of `schema.s
 
 Locally: `cp .env.example .env.local`, fill it in, `npm run dev`.
 
+## Starter recipes
+
+`seed/recipes.json` holds the first batch of recipes, in the same shape as the `recipes`
+table. It is deliberately **not** imported by the app: the bundle is public, and recipes
+belong behind Row Level Security with everything else. Instead a script turns the JSON
+into SQL you paste into Supabase.
+
+```
+node scripts/build-seed.mjs          # regenerate supabase/seed.sql
+node scripts/build-seed.mjs --check  # exit 1 if seed.sql is stale
+```
+
+To load them: run `schema.sql`, sign in to the app once so your account exists, then open
+`supabase/seed.sql`, set `owner_email` to the address you signed in with, and run it in
+the SQL editor. Re-running is safe; a recipe with a title you already have is skipped.
+
+The script refuses to build if any recipe marked `allium_free` mentions an onion, leek,
+shallot or chive in its ingredients or method, and warns about packaged things that
+commonly hide onion (stock, sausages, curry powder, taco seasoning, chilli crisp).
+Titles and notes are exempt so they can say "onion-free" or "leave off the spring onion".
+The warnings are a prompt to read the label, not a guarantee: the lint cannot see inside
+a jar.
+
+Everything in the starter set is tagged `to-try` with no rating: they are drafts, not
+recipes that have been cooked. Remove the tag and add a rating after the first cook.
+
 ## Notes
 
 `allium_free` is a column rather than a tag, deliberately. Someone in the household is allergic to the

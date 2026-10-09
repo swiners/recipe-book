@@ -29,7 +29,7 @@ const ALLIUM =
 /* Packaged things that often hide onion. Not errors, because plenty are fine, but each one
    is worth a look at the label before cooking for someone with an allergy. */
 const HIDDEN =
-  /\b(stock|broth|bouillon|sausages?|chorizo|salami|worcestershire|curry (?:powder|paste)|taco seasoning|seasoning|spice (?:mix|blend)|ketchup|barbecue|bbq|hoisin|oyster sauce|chilli (?:crisp|oil)|pesto|gravy|stuffing)\b/i;
+  /\b(stock|broth|bouillon|sausages?|chorizo|salami|worcestershire|curry (?:powder|paste)|taco seasoning|seasoning|spice (?:mix|blend)|ketchup|barbecue|bbq|hoisin|oyster sauce|chilli (?:crisp|oil)|pesto|gravy(?! beef)|stuffing)\b/i;
 
 const errors = [];
 const warnings = [];

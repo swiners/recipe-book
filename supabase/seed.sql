@@ -384,7 +384,7 @@ begin
       {
         "qty": "8",
         "unit": "",
-        "item": "bone-in, skin-on chicken thighs (about 1.2 kg)"
+        "item": "chicken thighs, bone-in and skin-on (about 1.2 kg)"
       },
       {
         "qty": "600",
@@ -1074,8 +1074,8 @@ begin
       },
       {
         "qty": "1",
-        "unit": "",
-        "item": "small garlic clove, grated (tzatziki)"
+        "unit": "small",
+        "item": "garlic clove, grated (tzatziki)"
       },
       {
         "qty": "10",
@@ -1137,6 +1137,1156 @@ begin
     "notes": "Draft, not cooked yet. Souvlaki is normally served with a red onion salad; skip it, the tomato and cucumber carry it. Threaded onto skewers it is the same recipe; soak wooden ones for 30 minutes. Cooked chicken keeps 3 days for lunches.",
     "rating": null,
     "last_cooked": null
+  },
+  {
+    "title": "Soft scrambled eggs with ricotta, chilli and parsley",
+    "servings": 2,
+    "prep_minutes": 5,
+    "cook_minutes": 6,
+    "ingredients": [
+      {
+        "qty": "6",
+        "unit": "",
+        "item": "eggs"
+      },
+      {
+        "qty": "20",
+        "unit": "g",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "60",
+        "unit": "g",
+        "item": "fresh ricotta, divided"
+      },
+      {
+        "qty": "2",
+        "unit": "slices",
+        "item": "sourdough, toasted"
+      },
+      {
+        "qty": "1",
+        "unit": "pinch",
+        "item": "chilli flakes"
+      },
+      {
+        "qty": "10",
+        "unit": "g",
+        "item": "flat-leaf parsley, chopped"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "salt and black pepper"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "lemon wedges, to serve"
+      }
+    ],
+    "steps": [
+      "Whisk the eggs with a good pinch of salt until no streaks of white remain.",
+      "Melt the butter in a non-stick pan over low-medium heat. Add the eggs and stir slowly and constantly with a spatula, pulling the edges to the middle. After 3 to 4 minutes you want large, soft, glossy curds. Take the pan off the heat before they look done; they finish cooking on the way to the plate.",
+      "Fold through half the ricotta.",
+      "Pile onto the toast with the rest of the ricotta in dollops, then the chilli, parsley, pepper and a squeeze of lemon."
+    ],
+    "tags": [
+      "breakfast",
+      "eggs",
+      "quick",
+      "high-protein",
+      "vegetarian",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Most scrambled-egg toppings reach for chives; parsley or dill does the job here. Low heat and constant stirring is the whole technique.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Overnight oats with yoghurt, chia and berries",
+    "servings": 2,
+    "prep_minutes": 5,
+    "cook_minutes": 0,
+    "ingredients": [
+      {
+        "qty": "80",
+        "unit": "g",
+        "item": "rolled oats"
+      },
+      {
+        "qty": "20",
+        "unit": "g",
+        "item": "chia seeds"
+      },
+      {
+        "qty": "250",
+        "unit": "g",
+        "item": "Greek yoghurt"
+      },
+      {
+        "qty": "150",
+        "unit": "ml",
+        "item": "milk, plus a splash to loosen"
+      },
+      {
+        "qty": "15",
+        "unit": "ml",
+        "item": "honey"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "vanilla extract"
+      },
+      {
+        "qty": "150",
+        "unit": "g",
+        "item": "berries, fresh or frozen"
+      },
+      {
+        "qty": "30",
+        "unit": "g",
+        "item": "walnuts, roughly chopped"
+      }
+    ],
+    "steps": [
+      "Stir the oats, chia, yoghurt, milk, honey and vanilla together in a bowl, or split between two jars.",
+      "Cover and refrigerate at least 6 hours, or overnight. The chia needs the time to swell.",
+      "In the morning, loosen with a splash of milk if it has set too firm. Top with the berries and walnuts."
+    ],
+    "tags": [
+      "breakfast",
+      "make-ahead",
+      "high-protein",
+      "vegetarian",
+      "no-cook",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Keeps 3 days in the fridge, so make four jars on a Sunday. Frozen berries thaw into the oats and turn it pink and syrupy, which is the point.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Banana-oat pancakes with yoghurt and berries",
+    "servings": 2,
+    "prep_minutes": 10,
+    "cook_minutes": 12,
+    "ingredients": [
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "ripe bananas"
+      },
+      {
+        "qty": "100",
+        "unit": "g",
+        "item": "rolled oats"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "eggs"
+      },
+      {
+        "qty": "80",
+        "unit": "g",
+        "item": "Greek yoghurt (batter)"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "baking powder"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "ground cinnamon"
+      },
+      {
+        "qty": "1",
+        "unit": "pinch",
+        "item": "salt"
+      },
+      {
+        "qty": "10",
+        "unit": "g",
+        "item": "butter, for the pan"
+      },
+      {
+        "qty": "100",
+        "unit": "g",
+        "item": "Greek yoghurt (to serve)"
+      },
+      {
+        "qty": "150",
+        "unit": "g",
+        "item": "berries"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "honey, to serve"
+      }
+    ],
+    "steps": [
+      "Blend the bananas, oats, eggs, batter yoghurt, baking powder, cinnamon and salt into a thick, slightly textured batter. Rest it 5 minutes so the oats soften.",
+      "Heat a non-stick pan over medium-low heat and melt a little butter. Spoon in dollops of about 60 ml and spread slightly.",
+      "Cook 2 to 3 minutes until bubbles appear and the edges look set, then flip and cook 1 to 2 minutes more. Wipe the pan and add fresh butter between batches.",
+      "Stack with the yoghurt, berries and a drizzle of honey."
+    ],
+    "tags": [
+      "breakfast",
+      "pancakes",
+      "high-protein",
+      "vegetarian",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Makes about 8 small pancakes. Keep the heat low: the banana catches and burns before the middle cooks. Check the oats if you are cooking for a coeliac.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Smoky roasted chickpeas",
+    "servings": 4,
+    "prep_minutes": 5,
+    "cook_minutes": 30,
+    "ingredients": [
+      {
+        "qty": "2",
+        "unit": "tin",
+        "item": "chickpeas (400 g each), drained and rinsed"
+      },
+      {
+        "qty": "30",
+        "unit": "ml",
+        "item": "olive oil"
+      },
+      {
+        "qty": "2",
+        "unit": "tsp",
+        "item": "smoked paprika"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "ground cumin"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "1",
+        "unit": "pinch",
+        "item": "cayenne pepper (optional)"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200 °C (180 °C fan).",
+      "Dry the chickpeas properly: roll them in a clean tea towel and rub. Loose skins will come off; discard them. Wet chickpeas steam instead of crisping.",
+      "Toss with the oil and spread in a single layer on a tray. Roast 20 minutes.",
+      "Shake the tray, sprinkle over the paprika, cumin, salt and cayenne, toss, and roast another 8 to 10 minutes until deep golden and crisp. Spices go in late because they burn over a long roast.",
+      "Cool on the tray; they crisp further as they cool."
+    ],
+    "tags": [
+      "snack",
+      "vegan",
+      "high-protein",
+      "make-ahead",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Best the same day; in a sealed container they go soft by morning. Use individual spices rather than a pre-mixed seasoning, which often contains onion powder.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Tuna, white bean and lemon smash on toast",
+    "servings": 2,
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "ingredients": [
+      {
+        "qty": "400",
+        "unit": "g",
+        "item": "tin cannellini beans, drained and rinsed"
+      },
+      {
+        "qty": "185",
+        "unit": "g",
+        "item": "tin tuna in olive oil, drained"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "lemon, zested and juiced"
+      },
+      {
+        "qty": "15",
+        "unit": "g",
+        "item": "capers, drained"
+      },
+      {
+        "qty": "30",
+        "unit": "ml",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1",
+        "unit": "small",
+        "item": "garlic clove, finely grated"
+      },
+      {
+        "qty": "4",
+        "unit": "slices",
+        "item": "sourdough, toasted"
+      },
+      {
+        "qty": "30",
+        "unit": "g",
+        "item": "rocket"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "salt and black pepper"
+      }
+    ],
+    "steps": [
+      "Mash the beans roughly with a fork, leaving plenty of texture.",
+      "Flake in the tuna and fold through the lemon zest, 30 ml of the lemon juice, capers, oil and garlic. Season well; tinned fish and beans both want salt.",
+      "Pile onto the toast and top with the rocket and a squeeze more lemon."
+    ],
+    "tags": [
+      "snack",
+      "lunch",
+      "quick",
+      "high-protein",
+      "no-cook",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Ten minutes, no cooking, and good in a lunchbox as a dip with crackers.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Slow-roasted lamb shoulder with fennel and white wine",
+    "servings": 6,
+    "prep_minutes": 20,
+    "cook_minutes": 250,
+    "ingredients": [
+      {
+        "qty": "2",
+        "unit": "kg",
+        "item": "bone-in lamb shoulder"
+      },
+      {
+        "qty": "30",
+        "unit": "ml",
+        "item": "olive oil"
+      },
+      {
+        "qty": "2",
+        "unit": "tsp",
+        "item": "fennel seeds, lightly crushed"
+      },
+      {
+        "qty": "2",
+        "unit": "tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "black pepper"
+      },
+      {
+        "qty": "8",
+        "unit": "",
+        "item": "garlic cloves, 4 slivered and 4 left whole"
+      },
+      {
+        "qty": "4",
+        "unit": "sprigs",
+        "item": "rosemary"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "fennel bulbs, cut into thick wedges"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "lemon, sliced"
+      },
+      {
+        "qty": "250",
+        "unit": "ml",
+        "item": "dry white wine"
+      },
+      {
+        "qty": "250",
+        "unit": "ml",
+        "item": "water"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 150 °C (130 °C fan).",
+      "Rub the lamb all over with the oil, fennel seeds, salt and pepper. Stab it about a dozen times with a small knife and push a sliver of garlic and a few rosemary leaves into each cut.",
+      "Put the fennel wedges, whole garlic cloves and lemon slices in a deep roasting tray and sit the lamb on top. Pour the wine and water around it.",
+      "Cover tightly with foil and roast 3½ hours, until the meat is starting to pull away from the bone.",
+      "Remove the foil, raise the oven to 200 °C (180 °C fan) and roast another 20 to 30 minutes to brown the top.",
+      "Rest 15 minutes, loosely covered. Skim the fat from the pan juices. Pull the meat apart with two forks and serve with the fennel and the juices spooned over."
+    ],
+    "tags": [
+      "slow-cook",
+      "lamb",
+      "sunday",
+      "oven",
+      "family",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Hands-off after the first 20 minutes. Leftovers are excellent in a flatbread the next day. A smaller shoulder (1.5 kg) needs closer to 3 hours.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Slow-cooked chicken and chickpea tagine",
+    "servings": 4,
+    "prep_minutes": 20,
+    "cook_minutes": 90,
+    "ingredients": [
+      {
+        "qty": "8",
+        "unit": "",
+        "item": "chicken thighs, bone-in, skin removed (about 1.2 kg)"
+      },
+      {
+        "qty": "30",
+        "unit": "ml",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "fennel bulb, diced"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "carrots, cut into chunks"
+      },
+      {
+        "qty": "4",
+        "unit": "",
+        "item": "garlic cloves, finely chopped"
+      },
+      {
+        "qty": "2",
+        "unit": "tsp",
+        "item": "ground cumin"
+      },
+      {
+        "qty": "2",
+        "unit": "tsp",
+        "item": "ground coriander"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "ground cinnamon"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "sweet paprika"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "400",
+        "unit": "g",
+        "item": "tin chopped tomatoes, plain (not flavoured)"
+      },
+      {
+        "qty": "400",
+        "unit": "g",
+        "item": "tin chickpeas, drained and rinsed"
+      },
+      {
+        "qty": "80",
+        "unit": "g",
+        "item": "dried apricots, halved"
+      },
+      {
+        "qty": "250",
+        "unit": "ml",
+        "item": "water"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "lemon, juiced"
+      },
+      {
+        "qty": "30",
+        "unit": "g",
+        "item": "flaked almonds, toasted"
+      },
+      {
+        "qty": "15",
+        "unit": "g",
+        "item": "coriander leaves"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "couscous or rice, to serve"
+      }
+    ],
+    "steps": [
+      "Season the chicken with the salt. Heat the oil in a large heavy casserole over medium-high heat and brown the chicken 4 minutes a side, in batches. Set aside.",
+      "Turn the heat to medium. Cook the fennel and carrot 8 minutes until softening. Add the garlic, cumin, coriander, cinnamon and paprika and stir for 1 minute.",
+      "Add the tomatoes, water, apricots and chickpeas, scraping up the browned bits. Return the chicken and any juices.",
+      "Cover and simmer very gently on the stove, or in a 160 °C (140 °C fan) oven, for about 60 minutes, until the chicken is falling off the bone. Take the lid off for the last 15 minutes if the sauce is thin.",
+      "Stir in the lemon juice. Scatter with the almonds and coriander and serve over couscous or rice."
+    ],
+    "tags": [
+      "slow-cook",
+      "chicken",
+      "one-pot",
+      "batch-cook",
+      "family",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Also works in a slow cooker: brown and soften as above, then 6 hours on low. Better on day two.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Red wine braised beef with carrot, celery and fennel",
+    "servings": 5,
+    "prep_minutes": 20,
+    "cook_minutes": 190,
+    "ingredients": [
+      {
+        "qty": "1.2",
+        "unit": "kg",
+        "item": "beef chuck or gravy beef, cut into 5 cm chunks"
+      },
+      {
+        "qty": "20",
+        "unit": "g",
+        "item": "plain flour"
+      },
+      {
+        "qty": "2",
+        "unit": "tsp",
+        "item": "salt, divided"
+      },
+      {
+        "qty": "45",
+        "unit": "ml",
+        "item": "olive oil, divided"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "carrots, cut into chunks"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "celery sticks, cut into chunks"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "fennel bulb, cut into wedges"
+      },
+      {
+        "qty": "4",
+        "unit": "",
+        "item": "garlic cloves, crushed"
+      },
+      {
+        "qty": "40",
+        "unit": "g",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "375",
+        "unit": "ml",
+        "item": "dry red wine"
+      },
+      {
+        "qty": "250",
+        "unit": "ml",
+        "item": "water"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "bay leaves"
+      },
+      {
+        "qty": "4",
+        "unit": "sprigs",
+        "item": "thyme"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "flat-leaf parsley, to serve"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 160 °C (140 °C fan).",
+      "Pat the beef dry, season with half the salt and toss in the flour. Brown it in a heavy casserole in 30 ml of the oil over high heat, in three or four batches so it sears rather than stews. About 3 to 4 minutes a batch. Set aside.",
+      "Add the remaining oil, carrot, celery and fennel and cook 8 minutes. Add the garlic and tomato paste and cook 2 minutes.",
+      "Pour in the wine, scrape up everything stuck to the base and boil until reduced by half, about 5 minutes.",
+      "Add the water, bay, thyme and remaining salt and return the beef. Bring to a simmer, cover tightly and transfer to the oven for 2½ to 3 hours, until a chunk of beef crushes easily with a spoon.",
+      "Skim the fat. If the sauce is thin, simmer it uncovered on the stove for 10 minutes. Scatter with parsley and serve with mash or polenta."
+    ],
+    "tags": [
+      "slow-cook",
+      "beef",
+      "braise",
+      "freezer-friendly",
+      "family",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Better the next day and freezes for 3 months. Check the tomato paste says tomato only.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Crumbed whiting with lemon and fennel slaw",
+    "servings": 2,
+    "prep_minutes": 20,
+    "cook_minutes": 8,
+    "ingredients": [
+      {
+        "qty": "4",
+        "unit": "",
+        "item": "whiting fillets, about 100 g each"
+      },
+      {
+        "qty": "40",
+        "unit": "g",
+        "item": "plain flour"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "eggs, beaten"
+      },
+      {
+        "qty": "80",
+        "unit": "g",
+        "item": "panko breadcrumbs"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "60",
+        "unit": "ml",
+        "item": "neutral oil, for shallow frying"
+      },
+      {
+        "qty": "1",
+        "unit": "small",
+        "item": "fennel bulb, shaved paper-thin (for the slaw)"
+      },
+      {
+        "qty": "100",
+        "unit": "g",
+        "item": "white cabbage, finely shredded (for the slaw)"
+      },
+      {
+        "qty": "30",
+        "unit": "ml",
+        "item": "lemon juice (for the slaw)"
+      },
+      {
+        "qty": "20",
+        "unit": "ml",
+        "item": "olive oil (for the slaw)"
+      },
+      {
+        "qty": "15",
+        "unit": "g",
+        "item": "flat-leaf parsley, chopped (for the slaw)"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "lemon, in wedges"
+      }
+    ],
+    "steps": [
+      "Toss the fennel, cabbage, lemon juice, olive oil, parsley and a pinch of salt together and leave to sit while you cook the fish.",
+      "Set up three plates: flour seasoned with half the salt, the beaten egg, and the panko. Pat the fillets dry and season with the remaining salt.",
+      "Dredge each fillet in flour, then egg, then panko, pressing the crumbs on firmly.",
+      "Heat the frying oil in a wide pan over medium-high heat until it shimmers. Fry the fillets 1½ to 2 minutes a side, in batches, until deep golden. Whiting is thin and cooks quickly.",
+      "Drain on paper towel or a rack and serve at once with the slaw and lemon wedges."
+    ],
+    "tags": [
+      "fish",
+      "seafood",
+      "crumbed",
+      "quick",
+      "weeknight",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Works for garfish, small flathead fillets or flounder too. Plain panko is usually just wheat and yeast, but read the label on flavoured crumbs, which can include onion.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Crispy-skin mulloway with lemon-herb potatoes",
+    "servings": 2,
+    "prep_minutes": 10,
+    "cook_minutes": 35,
+    "ingredients": [
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "mulloway fillets, skin on, about 200 g each"
+      },
+      {
+        "qty": "500",
+        "unit": "g",
+        "item": "baby potatoes, halved"
+      },
+      {
+        "qty": "45",
+        "unit": "ml",
+        "item": "olive oil, divided"
+      },
+      {
+        "qty": "2",
+        "unit": "tsp",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "salt, divided"
+      },
+      {
+        "qty": "150",
+        "unit": "g",
+        "item": "green beans, trimmed"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "lemon, zested and juiced"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "garlic cloves, finely chopped"
+      },
+      {
+        "qty": "15",
+        "unit": "g",
+        "item": "flat-leaf parsley, chopped"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 220 °C (200 °C fan). Toss the potatoes with 30 ml of the oil, the oregano and half the salt on a tray and roast 25 minutes, until golden and crisp at the edges.",
+      "Pat the fish skin very dry with paper towel and season it with the remaining salt.",
+      "Heat the remaining oil in a non-stick pan over medium-high. Lay the fillets in skin-side down and press flat with a spatula for 20 seconds so the skin stays in contact with the pan. Cook 5 minutes without moving them, until the skin is crisp and the flesh is opaque about two-thirds of the way up.",
+      "Flip and cook 2 to 3 minutes more, until the thickest part flakes.",
+      "Blanch the beans in boiling salted water for 3 minutes and drain.",
+      "Toss the hot potatoes with the lemon zest, juice, garlic and parsley. The heat softens the raw garlic. Serve the fish on the potatoes with the beans alongside."
+    ],
+    "tags": [
+      "fish",
+      "seafood",
+      "weeknight",
+      "high-protein",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Mulloway is a thick, firm fish; a fillet over 3 cm may need a few extra minutes, or finish it in the oven. Snapper or barramundi swap straight in.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Australian salmon fishcakes with dill yoghurt",
+    "servings": 4,
+    "prep_minutes": 30,
+    "cook_minutes": 25,
+    "ingredients": [
+      {
+        "qty": "500",
+        "unit": "g",
+        "item": "Australian salmon fillets, skin off"
+      },
+      {
+        "qty": "500",
+        "unit": "g",
+        "item": "floury potatoes, peeled and cut into chunks"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "egg"
+      },
+      {
+        "qty": "15",
+        "unit": "g",
+        "item": "capers, drained and chopped"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "lemon, zested, plus 15 ml juice"
+      },
+      {
+        "qty": "15",
+        "unit": "g",
+        "item": "dill, chopped"
+      },
+      {
+        "qty": "15",
+        "unit": "g",
+        "item": "flat-leaf parsley, chopped"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "black pepper"
+      },
+      {
+        "qty": "60",
+        "unit": "g",
+        "item": "panko breadcrumbs"
+      },
+      {
+        "qty": "40",
+        "unit": "ml",
+        "item": "neutral oil, for frying"
+      },
+      {
+        "qty": "150",
+        "unit": "g",
+        "item": "Greek yoghurt (for the sauce)"
+      },
+      {
+        "qty": "10",
+        "unit": "g",
+        "item": "dill, chopped (for the sauce)"
+      },
+      {
+        "qty": "10",
+        "unit": "ml",
+        "item": "lemon juice (for the sauce)"
+      }
+    ],
+    "steps": [
+      "Cut the dark red bloodline strip out of the salmon fillets and discard it. It carries most of the strong flavour.",
+      "Boil the potatoes in well-salted water 15 to 18 minutes until tender. Drain, let them steam dry for 2 minutes, then mash, leaving a few lumps. Cool 10 minutes.",
+      "While they cool, put the fish in a wide pan, cover with water and bring to the barest simmer. Cook 6 to 8 minutes until it flakes, then drain very well and flake it apart, checking for bones.",
+      "Gently combine the potato, fish, egg, capers, lemon zest and juice, herbs, mustard, salt and pepper. Do not beat it; you want chunks of fish. Shape into 8 patties and chill 20 minutes so they hold together.",
+      "Press both sides of each patty into the panko. Heat the oil in a frying pan over medium heat and fry 3 to 4 minutes a side, until golden and hot through. Drain on paper towel.",
+      "Stir the sauce ingredients together with a pinch of salt and serve with the fishcakes and a green salad."
+    ],
+    "tags": [
+      "fish",
+      "seafood",
+      "fishcakes",
+      "batch-cook",
+      "family",
+      "to-try"
+    ],
+    "allium_free": true,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. A good use for Australian salmon, which is strongly flavoured and dry when pan-fried plain. Two 415 g tins of salmon, drained, work in place of fresh. They freeze well uncooked, in layers with baking paper.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Beef and broccoli stir-fry for one",
+    "servings": 1,
+    "prep_minutes": 10,
+    "cook_minutes": 8,
+    "ingredients": [
+      {
+        "qty": "150",
+        "unit": "g",
+        "item": "beef rump or sirloin, thinly sliced across the grain"
+      },
+      {
+        "qty": "1",
+        "unit": "tsp",
+        "item": "cornflour"
+      },
+      {
+        "qty": "15",
+        "unit": "ml",
+        "item": "soy sauce (marinade)"
+      },
+      {
+        "qty": "150",
+        "unit": "g",
+        "item": "broccoli, cut into small florets"
+      },
+      {
+        "qty": "15",
+        "unit": "ml",
+        "item": "neutral oil, divided"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "garlic cloves, finely chopped"
+      },
+      {
+        "qty": "10",
+        "unit": "g",
+        "item": "ginger, finely grated"
+      },
+      {
+        "qty": "15",
+        "unit": "ml",
+        "item": "oyster sauce"
+      },
+      {
+        "qty": "10",
+        "unit": "ml",
+        "item": "soy sauce (sauce)"
+      },
+      {
+        "qty": "15",
+        "unit": "ml",
+        "item": "water"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "spring onion, thinly sliced"
+      },
+      {
+        "qty": "150",
+        "unit": "g",
+        "item": "cooked rice, to serve"
+      }
+    ],
+    "steps": [
+      "Toss the beef with the cornflour and marinade soy and leave 10 minutes.",
+      "Steam or microwave the broccoli for 2 minutes until just tender-crisp.",
+      "Heat a wok or large pan until smoking. Add half the oil and sear the beef in a single layer, about 1 minute a side. Tip it out onto a plate.",
+      "Add the remaining oil, then the garlic and ginger for 15 seconds. Add the broccoli, oyster sauce, sauce soy and water and toss for 1 minute.",
+      "Return the beef and toss for 30 seconds. Top with the spring onion and serve over the rice."
+    ],
+    "tags": [
+      "solo",
+      "quick",
+      "stir-fry",
+      "high-protein",
+      "weeknight",
+      "to-try"
+    ],
+    "allium_free": false,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Cooked for one, with spring onion, so it is not allium-free. Searing the beef in one fast hot layer matters more than anything else here. Double it for two, but cook the beef in two batches.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Chorizo, chickpea and spinach skillet with eggs",
+    "servings": 1,
+    "prep_minutes": 5,
+    "cook_minutes": 15,
+    "ingredients": [
+      {
+        "qty": "60",
+        "unit": "g",
+        "item": "chorizo, sliced"
+      },
+      {
+        "qty": "1",
+        "unit": "small",
+        "item": "brown onion, diced"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "garlic clove, sliced"
+      },
+      {
+        "qty": "0.5",
+        "unit": "tsp",
+        "item": "smoked paprika"
+      },
+      {
+        "qty": "200",
+        "unit": "g",
+        "item": "tinned chickpeas, drained and rinsed"
+      },
+      {
+        "qty": "100",
+        "unit": "g",
+        "item": "cherry tomatoes, halved"
+      },
+      {
+        "qty": "60",
+        "unit": "g",
+        "item": "baby spinach"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "eggs"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "crusty bread, to serve"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "lemon wedge"
+      }
+    ],
+    "steps": [
+      "Cook the chorizo in a small frying pan over medium heat for 3 minutes, until it has released its red oil and started to crisp.",
+      "Add the onion and cook 4 minutes until soft. Add the garlic and paprika for 30 seconds.",
+      "Add the chickpeas and tomatoes and cook 3 minutes until the tomatoes slump. Stir through the spinach until it wilts.",
+      "Make two wells, crack in the eggs, cover and cook 3 to 4 minutes on low until the whites are set and the yolks still wobble.",
+      "Squeeze over the lemon and eat from the pan with bread."
+    ],
+    "tags": [
+      "solo",
+      "one-pan",
+      "high-protein",
+      "weeknight",
+      "to-try"
+    ],
+    "allium_free": false,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Cooked for one, with onion, so it is not allium-free. Chorizo often contains onion or onion powder as well.",
+    "rating": null,
+    "last_cooked": null
+  },
+  {
+    "title": "Egg fried rice with peas and spring onion",
+    "servings": 1,
+    "prep_minutes": 5,
+    "cook_minutes": 8,
+    "ingredients": [
+      {
+        "qty": "200",
+        "unit": "g",
+        "item": "cold cooked rice, ideally a day old"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "eggs, beaten"
+      },
+      {
+        "qty": "10",
+        "unit": "ml",
+        "item": "neutral oil"
+      },
+      {
+        "qty": "5",
+        "unit": "ml",
+        "item": "sesame oil"
+      },
+      {
+        "qty": "2",
+        "unit": "",
+        "item": "spring onions, thinly sliced, whites and greens kept apart"
+      },
+      {
+        "qty": "1",
+        "unit": "",
+        "item": "garlic clove, finely chopped"
+      },
+      {
+        "qty": "80",
+        "unit": "g",
+        "item": "frozen peas"
+      },
+      {
+        "qty": "100",
+        "unit": "g",
+        "item": "cooked chicken, shredded (optional)"
+      },
+      {
+        "qty": "15",
+        "unit": "ml",
+        "item": "soy sauce"
+      },
+      {
+        "qty": "",
+        "unit": "",
+        "item": "white pepper"
+      }
+    ],
+    "steps": [
+      "Break up the cold rice with your fingers so there are no clumps.",
+      "Heat the neutral oil in a wok or large pan over high heat. Add the eggs, let them set for 10 seconds, then scramble roughly and push to the side.",
+      "Add the spring onion whites and garlic for 15 seconds, then the rice. Press it against the pan and let it sit 30 seconds at a time before tossing, so some grains catch and toast.",
+      "Add the peas and chicken and toss 2 minutes until hot through. Add the soy sauce around the edge of the pan so it sizzles, then the sesame oil and white pepper.",
+      "Fold through the spring onion greens and eat."
+    ],
+    "tags": [
+      "solo",
+      "quick",
+      "leftovers",
+      "weeknight",
+      "to-try"
+    ],
+    "allium_free": false,
+    "source_url": null,
+    "notes": "Draft, not cooked yet. Cooked for one, with spring onion, so it is not allium-free. Day-old rice is the secret: fresh rice is too wet and goes gluey. Spread it on a tray in the fridge for an hour if you only have fresh.",
+    "rating": null,
+    "last_cooked": null
   }
 ]
 $seed$::jsonb) as r(
@@ -1149,6 +2299,6 @@ $seed$::jsonb) as r(
   );
 
   get diagnostics inserted = row_count;
-  raise notice 'Inserted % of 12 recipes (the rest already existed).', inserted;
+  raise notice 'Inserted % of 26 recipes (the rest already existed).', inserted;
 end
 $seed_do$;

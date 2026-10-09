@@ -1,0 +1,29 @@
+name: CI
+
+# Runs on pull requests so a broken change is caught before it is merged, and merging to
+# main is what deploys. Deliberately no secrets and no Supabase variables: nothing here
+# talks to the live project.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          # 24 matches what the tests were written and run against. The unit tests load
+          # .ts files directly, which relies on Node's built-in type stripping.
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      # Fails if seed/recipes.json changed without regenerating supabase/seed.sql, or if a
+      # recipe marked allium_free mentions an onion-family word.
+      - run: npm run seed:check
+      - run: npm run build

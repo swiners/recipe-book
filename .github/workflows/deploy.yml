@@ -21,12 +21,17 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          # 24 matches what the tests run against (they load .ts files via Node's built-in
+          # type stripping).
+          node-version: 24
           cache: npm
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
       - run: npm ci
+      # A failing test or a stale seed stops the deploy rather than shipping it.
+      - run: npm test
+      - run: npm run seed:check
       - name: Build
         env:
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}

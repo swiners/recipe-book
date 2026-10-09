@@ -1,10 +1,17 @@
 import { useState } from "react";
 import type { Ingredient, Recipe, RecipeDraft } from "../lib/types";
 import { emptyDraft } from "../lib/types";
+import type { PhotoChange } from "../lib/photos";
+import type { ImportResult } from "../lib/importRecipe";
+import { safeHttpUrl } from "../lib/url";
+import { ImportPanel } from "./ImportPanel";
+import { PhotoField } from "./PhotoField";
 
 type Props = {
   initial?: Recipe;
-  onSave: (draft: RecipeDraft) => Promise<void>;
+  /** Signed URL of the recipe's existing photo, for the preview. */
+  photoUrl?: string;
+  onSave: (draft: RecipeDraft, photo: PhotoChange) => Promise<void>;
   onCancel: () => void;
 };
 
@@ -21,14 +28,17 @@ const toDraft = (r: Recipe): RecipeDraft => ({
   notes: r.notes,
   rating: r.rating,
   last_cooked: r.last_cooked,
+  photo_path: r.photo_path,
 });
 
 /** Empty string -> null, so the database stores an absent value rather than "". */
 const orNull = (v: string) => (v.trim() === "" ? null : v.trim());
 const numOrNull = (v: string) => (v.trim() === "" ? null : Number(v));
 
-export function RecipeForm({ initial, onSave, onCancel }: Props) {
+export function RecipeForm({ initial, photoUrl, onSave, onCancel }: Props) {
   const [d, setD] = useState<RecipeDraft>(initial ? toDraft(initial) : emptyDraft());
+  const [photo, setPhoto] = useState<PhotoChange>({ kind: "keep" });
+  const [imported, setImported] = useState<ImportResult | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,19 +51,40 @@ export function RecipeForm({ initial, onSave, onCancel }: Props) {
       d.ingredients.map((ing, n) => (n === i ? { ...ing, ...patch } : ing)),
     );
 
+  function applyImport(result: ImportResult) {
+    // Replace the content, keep what an import knows nothing about (the photo), and never
+    // carry allium_free over: the import leaves it off, and so does this.
+    setD((prev) => ({ ...result.draft, photo_path: prev.photo_path, allium_free: false }));
+    setImported(result);
+  }
+
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+
+    // The browser's type="url" accepts javascript: and data: URLs, so check the scheme.
+    // A saved source link ends up as a clickable <a href>.
+    const source = orNull(d.source_url ?? "");
+    const safeSource = source === null ? null : safeHttpUrl(source);
+    if (source !== null && safeSource === null) {
+      setError("The source needs to be a web link starting with http:// or https://.");
+      return;
+    }
+
     setBusy(true);
     setError(null);
     try {
-      await onSave({
-        ...d,
-        title: d.title.trim(),
-        // Blank rows are an artefact of the editor, not data worth keeping.
-        ingredients: d.ingredients.filter((i) => i.item.trim() !== ""),
-        steps: d.steps.map((s) => s.trim()).filter(Boolean),
-        tags: d.tags.map((t) => t.trim().toLowerCase()).filter(Boolean),
-      });
+      await onSave(
+        {
+          ...d,
+          title: d.title.trim(),
+          source_url: safeSource,
+          // Blank rows are an artefact of the editor, not data worth keeping.
+          ingredients: d.ingredients.filter((i) => i.item.trim() !== ""),
+          steps: d.steps.map((s) => s.trim()).filter(Boolean),
+          tags: d.tags.map((t) => t.trim().toLowerCase()).filter(Boolean),
+        },
+        photo,
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not save.");
       setBusy(false);
@@ -61,12 +92,39 @@ export function RecipeForm({ initial, onSave, onCancel }: Props) {
   }
 
   return (
+    <>
+    {/* Only for new recipes: importing over an existing one would silently replace it.
+        A sibling of the form, not a child: the panel has forms of its own, and forms
+        cannot nest. */}
+    {!initial && (
+      <div className="rb-panel rb-import-panel">
+        <ImportPanel onImported={applyImport} />
+      </div>
+    )}
+
     <form className="rb-panel" onSubmit={submit}>
       <h2 className="rb-title" style={{ fontSize: 22, marginTop: 0 }}>
         {initial ? "Edit recipe" : "New recipe"}
       </h2>
 
       {error && <div className="rb-banner rb-banner--error">{error}</div>}
+
+      {imported && (
+        <div className="rb-banner rb-banner--info" role="status">
+          <strong>Imported. Check everything below before you save.</strong>
+          {imported.alliumWords.length > 0 ? (
+            <p style={{ margin: "var(--rb-space-2) 0 0" }}>
+              Allium spotted: {imported.alliumWords.join(", ")}. Allium-free has been left off.
+            </p>
+          ) : (
+            <p style={{ margin: "var(--rb-space-2) 0 0" }}>
+              No onion-family words found, but an import cannot see inside a jar or a stock cube.
+              Allium-free has been left off. Turn it on yourself once you are sure.
+            </p>
+          )}
+          {imported.notes.map((n) => <p key={n} style={{ margin: "var(--rb-space-2) 0 0" }}>{n}</p>)}
+        </div>
+      )}
 
       <div className="rb-field">
         <label className="rb-label" htmlFor="title">Title</label>
@@ -75,6 +133,8 @@ export function RecipeForm({ initial, onSave, onCancel }: Props) {
           value={d.title} onChange={(e) => set("title", e.target.value)}
         />
       </div>
+
+      <PhotoField currentUrl={photoUrl} hasPhoto={!!initial?.photo_path} change={photo} onChange={setPhoto} />
 
       <div className="rb-row">
         <div className="rb-field">
@@ -184,5 +244,6 @@ export function RecipeForm({ initial, onSave, onCancel }: Props) {
         <button className="rb-btn" type="button" onClick={onCancel}>Cancel</button>
       </div>
     </form>
+    </>
   );
 }

@@ -49,7 +49,12 @@ export async function verify({ url, key, siteUrl, fetchImpl = fetch }) {
     const name = "Signed-out visitors cannot read recipes";
     const r = await call(`${base}/rest/v1/recipes?select=id&limit=1`, { headers });
     if (r.status === 0) add(name, "fail", `Could not reach the project (${r.error}). Check the URL.`);
-    else if (r.status === 401 || r.status === 403) add(name, "pass", `Refused with ${r.status}.`);
+    // A 401 can mean two very different things. "Row Level Security refused a stranger" is
+    // the pass we want; "the key you sent is not valid for this project" is not a pass at
+    // all, because nothing was actually tested. The gateway's wording tells them apart.
+    else if ((r.status === 401 || r.status === 403) && /invalid api key|no api key/i.test(r.text)) {
+      add(name, "fail", "The project rejected the API key, so this check proved nothing. The key is wrong, incomplete (it must start with sb_publishable_), or from a different project.");
+    } else if (r.status === 401 || r.status === 403) add(name, "pass", `Refused with ${r.status}.`);
     else if (r.status === 404) add(name, "fail", "No recipes table found. Has supabase/schema.sql been run?");
     else if (r.status === 200) {
       let rows;
@@ -115,7 +120,13 @@ export async function verify({ url, key, siteUrl, fetchImpl = fetch }) {
           if (js.text.includes(host)) add("Site bundle points at this project", "pass", "The Supabase URL is baked in, so the repo variables were set at build time.");
           else add("Site bundle points at this project", "fail", "The bundle does not mention this project. It was built without VITE_SUPABASE_URL: set the repo variables, then re-run the deploy workflow.");
 
-          // The publishable key is meant to be in here. A secret key must never be.
+          // The publishable key is meant to be in here, in full. The library itself contains
+          // the bare prefix as a string, so a bare prefix proves nothing: require the token
+          // after it. Counted, never printed.
+          if (/sb_publishable_[A-Za-z0-9_-]{20,}/.test(js.text)) add("Site bundle carries a complete publishable key", "pass", "A full-length key is baked in.");
+          else add("Site bundle carries a complete publishable key", "fail", "No full-length publishable key is in the bundle. The VITE_SUPABASE_PUBLISHABLE_KEY variable is missing, empty, or lacks the sb_publishable_ prefix: set it again, then re-run the deploy.");
+
+          // A secret key must never be in here.
           const leak = js.text.match(/sb_secret_[A-Za-z0-9_-]{8,}|service_role/);
           if (leak) add("No secret key in the bundle", "fail", "The published bundle contains what looks like a secret/service_role key. Rotate it in Supabase immediately.");
           else add("No secret key in the bundle", "pass", "No secret-key markers found.");

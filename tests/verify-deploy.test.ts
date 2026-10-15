@@ -29,14 +29,14 @@ const GOOD: Record<string, Route> = {
   "/storage/v1/object/public/recipe-photos/verify-probe.jpg": { status: 400, body: '{"message":"Bucket not found"}' },
   "POST /functions/v1/fetch-recipe-page": { status: 401, body: '{"error":"Sign in first."}' },
   "sam-recipes/": { status: 200, body: '<html><script type="module" src="/sam-recipes/assets/index-abc.js"></script><div id="root"></div></html>' },
-  "/sam-recipes/assets/index-abc.js": { status: 200, body: 'const u="https://abcdefgh.supabase.co";' },
+  "/sam-recipes/assets/index-abc.js": { status: 200, body: 'const u="https://abcdefgh.supabase.co";const k="sb_publishable_FAKEFAKEFAKEFAKEFAKEFA_12345678";' },
 };
 const by = (rs: Awaited<ReturnType<typeof verify>>) => Object.fromEntries(rs.map((r) => [r.name, r.status]));
 
 test("a correctly locked-down project passes every check", async () => {
   const rs = await verify({ url: URL_, key: KEY, siteUrl: SITE, fetchImpl: fakeFetch(GOOD) });
   assert.deepEqual(rs.filter((r) => r.status !== "pass"), []);
-  assert.equal(rs.length, 7);
+  assert.equal(rs.length, 8);
 });
 
 test("RLS leak: a signed-out request that returns rows FAILS", async () => {
@@ -129,6 +129,23 @@ test("every request is signed out: only the publishable key is sent, and nothing
   // The site is fetched without the key (it is a different origin and needs none).
   const siteCall = seen.find((s) => s.url === SITE)!;
   assert.equal(((siteCall.init?.headers ?? {}) as Record<string, string>).apikey, undefined);
+});
+
+test("a 401 from a rejected KEY is a failure, not a pass: nothing was actually tested", async () => {
+  for (const body of ['{"message":"Invalid API key","hint":"Double check your Supabase `anon` or `service_role` API key."}', '{"message":"No API key found in request"}']) {
+    const rs = await verify({ url: URL_, key: KEY, fetchImpl: fakeFetch({ ...GOOD, "/rest/v1/recipes?select=id&limit=1": { status: 401, body } }) });
+    assert.equal(by(rs)["Signed-out visitors cannot read recipes"], "fail", body);
+  }
+  // ...while a 401 that is the lock doing its job still passes.
+  const locked = await verify({ url: URL_, key: KEY, fetchImpl: fakeFetch({ ...GOOD, "/rest/v1/recipes?select=id&limit=1": { status: 401, body: '{"message":"permission denied for table recipes"}' } }) });
+  assert.equal(by(locked)["Signed-out visitors cannot read recipes"], "pass");
+});
+
+test("a bundle with only the library's bare prefix, or a truncated key, has no usable key", async () => {
+  for (const bundle of ['const u="https://abcdefgh.supabase.co";x.startsWith(`sb_publishable_`)', 'const u="https://abcdefgh.supabase.co";const k="sb_publishable_short"', 'const u="https://abcdefgh.supabase.co";const k="FAKEFAKEFAKEFAKEFAKEFA_12345678";']) {
+    const rs = await verify({ url: URL_, key: KEY, siteUrl: SITE, fetchImpl: fakeFetch({ ...GOOD, "/sam-recipes/assets/index-abc.js": { status: 200, body: bundle } }) });
+    assert.equal(by(rs)["Site bundle carries a complete publishable key"], "fail", bundle.slice(0, 60));
+  }
 });
 
 test("a trailing slash on the URL is tolerated", async () => {

@@ -7,6 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "seed:build": "node scripts/build-seed.mjs",
+    "seed:check": "node scripts/build-seed.mjs --check",
+    "verify:deploy": "node scripts/verify-deploy.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

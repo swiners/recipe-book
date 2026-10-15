@@ -15,6 +15,8 @@ export type Recipe = {
   notes: string | null;
   rating: number | null;
   last_cooked: string | null;
+  /** Object path in the private recipe-photos bucket, "<user id>/<uuid>.jpg". */
+  photo_path: string | null;
   created_at: string;
   updated_at: string;
 };
@@ -35,4 +37,5 @@ export const emptyDraft = (): RecipeDraft => ({
   notes: null,
   rating: null,
   last_cooked: null,
+  photo_path: null,
 });

@@ -1,0 +1,9 @@
+# Only the parts the Supabase CLI needs to deploy the Edge Function. This is not a full
+# `supabase init` config and is not used by the hosted project's settings.
+project_id = "sam-recipes"
+
+[functions.fetch-recipe-page]
+# The platform's JWT check accepts the public anon/publishable key, so on its own it would
+# leave this function open to the whole internet. The function verifies the signed-in user
+# itself (see index.ts), which also works with the newer non-JWT API keys.
+verify_jwt = false

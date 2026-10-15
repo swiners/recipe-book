@@ -44,9 +44,24 @@ create table if not exists recipes (
   rating        smallint check (rating is null or rating between 1 and 5),
   last_cooked   date,
 
+  -- Object path in the private recipe-photos bucket: "<user id>/<uuid>.jpg". Not a URL:
+  -- the bucket is private, so the app asks for a short-lived signed URL when it needs one.
+  photo_path    text,
+
   created_at    timestamptz not null default now(),
   updated_at    timestamptz not null default now()
 );
+
+-- Databases created before photos existed: `create table if not exists` leaves an existing
+-- table alone, so the column has to be added separately. Harmless on a fresh database.
+alter table recipes add column if not exists photo_path text;
+
+-- A photo path has to live in its owner's folder. The storage policies below already stop
+-- one user reading another's files, so this is defence in depth: a row can never point
+-- at someone else's object even if a client sends a hand-written path.
+alter table recipes drop constraint if exists recipes_photo_path_own_folder;
+alter table recipes add constraint recipes_photo_path_own_folder
+  check ( photo_path is null or photo_path like user_id::text || '/%' );
 
 -- Every query the app makes is "my recipes, newest first" or a tag/allium filter.
 create index if not exists recipes_user_created_idx on recipes (user_id, created_at desc);
@@ -110,9 +125,17 @@ create policy recipes_delete_own on recipes
 -- ── Photo storage ───────────────────────────────────────────────────────────────────
 -- Private bucket. A public bucket would make every photo readable by URL to anyone who
 -- guessed or was given the path, which RLS on the table above would not prevent.
-insert into storage.buckets (id, name, public)
-values ('recipe-photos', 'recipe-photos', false)
-on conflict (id) do nothing;
+--
+-- Limits live on the bucket so they hold whatever client is talking to it, including one
+-- that skips the app's resize step. 5 MB and JPEG only: the app always re-encodes to
+-- JPEG, which is also what strips location data from phone photos. `do update` rather
+-- than `do nothing` so re-running this file brings an existing bucket in line.
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('recipe-photos', 'recipe-photos', false, 5242880, array['image/jpeg'])
+on conflict (id) do update
+  set public = false,
+      file_size_limit = excluded.file_size_limit,
+      allowed_mime_types = excluded.allowed_mime_types;
 
 -- Objects are namespaced by owner: recipe-photos/<uid>/<filename>. The policies compare
 -- the first path segment to the caller, so one user's folder is unreachable from another.
